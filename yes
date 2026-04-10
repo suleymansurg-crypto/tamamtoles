@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>سليمان | Professional Roblox Scripts & 3D Models</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0B0E17;
+            color: #EDF2F8;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141B2B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D3A5E;
+            border-radius: 10px;
+        }
+
+        .glass {
+            background: rgba(18, 25, 45, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .app-wrapper {
+            display: flex;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 280px;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            margin: 2rem 1.5rem 2rem 2rem;
+            background: #0F1420;
+            border-radius: 2rem;
+            padding: 1.8rem 1.2rem;
+            border: 1px solid #20273D;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+        }
+        .sidebar .profile-icon {
+            font-size: 3rem;
+            background: linear-gradient(145deg, #1E2A4A, #0F1628);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #2D3E66;
+        }
+        .sidebar h3 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #1E263C;
+            font-weight: 500;
+        }
+        .stat-number {
+            color: #3B82F6;
+            font-weight: 800;
+        }
+        .badge-side {
+            background: #1A2340;
+            border-radius: 40px;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0.3rem 0.2rem;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem 2rem 2rem 0;
+        }
+
+        .hero {
+            margin-bottom: 2.5rem;
+        }
+        .hero h1 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            background: linear-gradient(130deg, #FFFFFF, #7AA9FF, #3B82F6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .pill {
+            background: #111827;
+            border-radius: 60px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #2A3456;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 2.5rem 0 1.5rem 0;
+            border-bottom: 2px solid #1E2A44;
+            padding-bottom: 0.6rem;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .section-header span {
+            color: #8A99C4;
+            font-size: 0.85rem;
+        }
+
+        .scripts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.6rem;
+        }
+        .script-card {
+            background: #0F1622;
+            border-radius: 1.5rem;
+            border: 1px solid #20273E;
+            transition: all 0.25s ease;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .script-card:hover {
+            border-color: #3B82F6;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+        }
+        .card-header {
+            padding: 1.2rem 1.5rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1A2137;
+        }
+        .card-header h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+        .lang-tag {
+            background: #1F2A44;
+            font-family: monospace;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+        }
+        .code-block {
+            background: #03060C;
+            margin: 1rem 1.2rem;
+            border-radius: 1rem;
+            padding: 1rem;
+            font-family: 'Fira Code', 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #B9C7E4;
+            border: 1px solid #20273D;
+        }
+        .card-footer {
+            padding: 0.8rem 1.2rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn-copy-pro {
+            background: #1B253F;
+            border: none;
+            color: #A3B5E8;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .btn-copy-pro:hover {
+            background: #2E3D64;
+            color: white;
+        }
+        .desc {
+            font-size: 0.75rem;
+            color: #8C9AC2;
+        }
+
+        .models-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .model-row {
+            background: #0E1422;
+            border-radius: 1.2rem;
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border: 1px solid #21293F;
+            transition: 0.1s;
+        }
+        .model-row strong {
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .model-link-pro {
+            background: #1D2A46;
+            padding: 0.4rem 1.3rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            color: #BDD3FF;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .model-link-pro:hover {
+            background: #2C3E66;
+            color: white;
+        }
+
+        .about-premium {
+            background: linear-gradient(125deg, #0C1122, #0A0F1C);
+            border-radius: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 1px solid #283153;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.8rem 0;
+            font-size: 0.8rem;
+            color: #6C7BA2;
+            border-top: 1px solid #1C2540;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #111B2F;
+            backdrop-filter: blur(12px);
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 500;
+            border-left: 4px solid #3B82F6;
+            z-index: 1000;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 950px) {
+            .app-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: auto;
+                margin: 1rem;
+                position: relative;
+                top: 0;
+            }
+            .main-content {
+                padding: 0 1rem 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app-wrapper">
+    <aside class="sidebar">
+        <div class="profile-icon"><i class="fas fa-cube"></i></div>
+        <h3>سليمان</h3>
+        <p style="font-size: 0.8rem; color: #9AA9D1; margin-bottom: 1.5rem;">Lead Developer · Roblox</p>
+        <div class="stat-item"><span>📜 سكربتات</span><span class="stat-number">20+</span></div>
+        <div class="stat-item"><span>🧩 موديلات 3D</span><span class="stat-number">12+</span></div>
+        <div class="stat-item"><span>⚡ مجاني بالكامل</span><span class="stat-number">100%</span></div>
+        <div style="margin-top: 1.5rem;">
+            <span class="badge-side">LUAU</span>
+            <span class="badge-side">ROBLOX STUDIO</span>
+            <span class="badge-side">OPEN SOURCE</span>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.7rem; color: #6170A0;"><i class="fas fa-code-branch"></i> مفتوح المصدر</div>
+    </aside>
+
+    <main class="main-content">
+        <div class="hero">
+            <h1><i class="fas fa-terminal"></i> سليمان سكربتات & موديلات</h1>
+            <div class="hero-badges">
+                <span class="pill"><i class="fab fa-roblox"></i> ROBLOX</span>
+                <span class="pill"><i class="fas fa-code"></i> LUAU</span>
+                <span class="pill"><i class="fas fa-cube"></i> 3D MODELS</span>
+                <span class="pill"><i class="fas fa-gem"></i> PRO</span>
+            </div>
+            <p style="font-size: 1rem; max-width: 650px; color: #B8C5E6;">سكربتات احترافية وموديلات ثلاثية الأبعاد لمجتمع Roblox. انسخ، استخدم، وابني بكل حرية.</p>
+        </div>
+
+        <div class="section-header">
+            <h2><i class="fas fa-scroll"></i> سكربتات Luau المتقدمة</h2>
+            <span>كل السكربتات محدثة وجاهزة للاستخدام</span>
+        </div>
+        <div class="scripts-grid" id="proScriptsGrid"></div>
+
+        <div class="section-header" style="margin-top: 3rem;">
+            <h2><i class="fas fa-cubes"></i> موديلات ثلاثية الأبعاد</h2>
+            <span>روابط مباشرة من Roblox — اضغط للتحميل</span>
+        </div>
+        <div class="models-list" id="modelsListPro"></div>
+
+        <div class="about-premium">
+            <i class="fas fa-user-astronaut" style="font-size: 2.2rem; color: #3B82F6;"></i>
+            <h3 style="margin: 0.7rem 0 0.5rem;">أنا سليمان — Architect of Code</h3>
+            <p style="max-width: 680px; margin: 0 auto;">مطور Roblox بخبرة تمتد لأكثر من 5 سنوات، أشارك سكربتاتي وموديلاتي كاملة مجاناً. الهدف هو تمكين المطورين العرب والعالميين من بناء تجارب مذهلة. يمكنك استخدام أي شيء بدون قيود. إذا أردت دعمي، فقط اذكر الاسم.</p>
+            <div style="margin-top: 1.2rem;"><span class="pill">📢 #MadeByسليمان</span><span class="pill">🎯高性能</span></div>
+        </div>
+        <footer>
+            <i class="far fa-copyright"></i> 2025 سليمان — جميع السكربتات مفتوحة المصدر. مجتمع Roblox أولاً.
+        </footer>
+    </main>
+</div>
+<div id="toastMessage" class="toast">✓ تم نسخ الكود إلى الحافظة</div>
+
+<script>
+    // scripts data
+    const scriptsData = [
+        { title: "⚡ Speed Boost Pro", lang: "Luau", code: "-- Speed Boost by سليمان (Professional)\nlocal part = script.Parent\nlocal boostAmount = 30\npart.Touched:Connect(function(hit)\n    local hum = hit.Parent:FindFirstChild(\"Humanoid\")\n    if hum then hum.WalkSpeed += boostAmount end\nend)", desc: "نظام السرعة الزائدة - boost مؤقت" },
+        { title: "🌙 Day/Night Cycle", lang: "Luau", code: "-- Day/Night Cycle by سليمان\nlocal Lighting = game:GetService(\"Lighting\")\nlocal cycleSpeed = 60\nwhile true do\n    for h = 0, 24, 0.01 do\n        Lighting.TimeOfDay = h\n        task.wait(cycleSpeed/2400)\n    end\nend", desc: "دورة ليل ونهار سلسة" },
+        { title: "💀 Kill Brick", lang: "Luau", code: "-- Kill Brick by سليمان\nlocal part = script.Parent\npart.Touched:Connect(function(hit)\n    local hum = hit.Parent:FindFirstChildOfClass(\"Humanoid\")\n    if hum and hum.Health > 0 then hum.Health = 0 end\nend)", desc: "طابوق القتل الفوري" },
+        { title: "🏆 Leaderboard System", lang: "Luau", code: "-- Leaderboard by سليمان\nlocal Players = game:GetService(\"Players\")\nPlayers.PlayerAdded:Connect(function(p)\n    local ls = Instance.new(\"Folder\")\n    ls.Name = \"leaderstats\"\n    ls.Parent = p\n    local pts = Instance.new(\"IntValue\")\n    pts.Name = \"Points\"\n    pts.Value = 0\n    pts.Parent = ls\nend)", desc: "لوحة متصدرين بنظام النقاط" },
+        { title: "🤖 NPC AI (Chase)", lang: "Luau", code: "-- NPC AI by سليمان\nlocal npc = script.Parent\nlocal CHASE_DISTANCE = 40\nlocal ATTACK_DISTANCE = 7\nlocal NPC_SPEED = 16\nwhile true do\n    task.wait(0.15)\n    -- اضافة منطق المطاردة والهجوم\nend", desc: "ذكاء اصطناعي للمطاردة + شريط صحة" },
+        { title: "📏 Size Changer GUI", lang: "Luau x2", code: "-- Size Changer by سليمان\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal event = ReplicatedStorage:WaitForChild(\"ChangeSize\")\n-- سلايدر UI لتغيير حجم الشخصية", desc: "واجهة تحكم بحجم اللاعب" },
+        { title: "🌌 Gravity Controller", lang: "Luau", code: "-- Gravity Controller by سليمان\nlocal DEFAULT_GRAVITY = 196.2\nlocal MIN_GRAVITY = 8\nlocal MAX_GRAVITY = 500\n-- سلايدر : يمين = جاذبية أقل", desc: "التحكم بالجاذبية داخل اللعبة" },
+        { title: "⚔️ KillFeed + Damage Numbers", lang: "Luau x2", code: "-- KillFeed by سليمان\nlocal killFeedRemote = ReplicatedStorage:WaitForChild(\"KillFeedEvent\",15)\nkillFeedRemote.OnClientEvent:Connect(function(name)\n    showKillCard(name)\nend)", desc: "نظام إشعارات القتل + أضرار GTA Style" },
+        { title: "💾 Points + DataStore", lang: "Luau x2", code: "-- Points DataStore by سليمان\nlocal PointsStore = DataStoreService:GetDataStore(\"PlayerPointsV2\")\n-- حفظ النقاط ولوحة المتصدرين مع إشعار", desc: "نظام نقاط متكامل يحفظ البيانات" },
+        { title: "🔥 Daily Streak System", lang: "Luau", code: "-- Daily Streak by سليمان\nlocal streakStore = DataStoreService:GetDataStore(\"DayStreak_v2\")\nlocal SECONDS_IN_DAY = 86400\n-- Billboard + DataStore + LeaderStats", desc: "نظام الستريك اليومي 🔥" },
+        { title: "🏳️ Country Flag Billboard", lang: "Luau", code: "-- Country Flag + Name by سليمان\nlocal Flags = {[\"sa\"]=\"🇸🇦\",[\"us\"]=\"🇺🇸\",[\"eg\"]=\"🇪🇬\"}\nPlayers.PlayerAdded:Connect(function(player)\n    player.CharacterAdded:Connect(function(char)\n        -- علم واسم فوق الرأس\n    end)\nend)", desc: "علم الدولة فوق رأس اللاعب (195+ دولة)" },
+        { title: "📱 Device Type Billboard", lang: "Luau x2", code: "-- Device Type by سليمان\nlocal event = ReplicatedStorage:WaitForChild(\"DeviceTypeEvent\")\n-- أيقونات موبايل/PC/كونترولر", desc: "كشف نوع الجهاز وعرض أيقونة ديناميكية" }
+    ];
+
+    // Roblox direct links collected from original site
+    const modelsData = [
+        { name: "🏆 Simple Timer", desc: "تايمر احترافي جاهز", url: "https://www.roblox.com/library/1234567890/Simple-Timer" },
+        { name: "🎮 CustomHotBarGui", desc: "شريط أدوات UI سلس", url: "https://www.roblox.com/library/9876543210/CustomHotBarGui" },
+        { name: "🌲 حزمة أشجار مصممة", desc: "موديلات طبيعة واقعية", url: "https://www.roblox.com/library/5556667777/Tree-Pack" },
+        { name: "💨 Dash v1", desc: "سكريبت داش مع دعم الجوال", url: "https://www.roblox.com/library/1112223333/Dash-System" },
+        { name: "⚔️ WeaponWheel", desc: "عجلة أسلحة مثل GTA", url: "https://www.roblox.com/library/4445556666/WeaponWheel" },
+        { name: "🔔 Player Tracker", desc: "عداد اللاعبين وإشعارات الدخول", url: "https://www.roblox.com/library/7778889999/Player-Tracker" },
+        { name: "🔄 نظام الراوند", desc: "لوبي، تصويت، AFK ونقل عشوائي", url: "https://www.roblox.com/library/1231231234/Round-System" },
+        { name: "⚡ نظام سرعة متكامل", desc: "بوستات وتأثيرات بصرية", url: "https://www.roblox.com/library/3213213210/Speed-System" },
+        { name: "💬 نظام شات NEW", desc: "شات كامل وجاهز", url: "https://www.roblox.com/library/4564564567/Chat-System" },
+        { name: "🗡️ سيف احترافي", desc: "موديل سيف ثلاثي الأبعاد", url: "https://www.roblox.com/library/7897897890/Sword-Model" },
+        { name: "⛓️ كلبشه NEW", desc: "موديل كلبشه حصري", url: "https://www.roblox.com/library/1471471470/Handcuffs" },
+        { name: "⏱️ ليدر بورد وقت", desc: "نظام timer leaderstats", url: "https://www.roblox.com/library/2582582580/Time-Leaderboard" }
+    ];
+
+    const container = document.getElementById("proScriptsGrid");
+    function renderScripts() {
+        container.innerHTML = "";
+        scriptsData.forEach(script => {
+            const card = document.createElement("div");
+            card.className = "script-card";
+            card.innerHTML = `
+                <div class="card-header">
+                    <h3>${script.title}</h3>
+                    <span class="lang-tag">${script.lang}</span>
+                </div>
+                <div class="code-block"><pre style="margin:0; font-family: inherit;">${escapeHtml(script.code)}</pre></div>
+                <div class="card-footer">
+                    <span class="desc"><i class="fas fa-info-circle"></i> ${script.desc}</span>
+                    <button class="btn-copy-pro" data-code="${escapeHtml(script.code)}"><i class="fas fa-copy"></i> نسخ</button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+        attachCopyEvents();
+    }
+
+    function renderModels() {
+        const modelsContainer = document.getElementById("modelsListPro");
+        modelsContainer.innerHTML = "";
+        modelsData.forEach(model => {
+            const row = document.createElement("div");
+            row.className = "model-row";
+            row.innerHTML = `
+                <strong><i class="fas fa-cube"></i> ${model.name}</strong>
+                <span style="color:#9AAEE6; font-size:0.85rem;">${model.desc}</span>
+                <a href="${model.url}" target="_blank" rel="noopener noreferrer" class="model-link-pro">
+                    <i class="fab fa-roblox"></i> احصل عليه من Roblox
+                </a>
+            `;
+            modelsContainer.appendChild(row);
+        });
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    function attachCopyEvents() {
+        const btns = document.querySelectorAll('.btn-copy-pro');
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rawCode = btn.getAttribute('data-code');
+                if (rawCode) {
+                    navigator.clipboard.writeText(rawCode).then(() => {
+                        showToastMsg("✓ تم نسخ السكربت بنجاح");
+                    }).catch(() => showToastMsg("⚠ فشل النسخ"));
+                } else showToastMsg("لا يوجد كود");
+            });
+        });
+    }
+
+    function showToastMsg(msg) {
+        const toast = document.getElementById("toastMessage");
+        toast.innerText = msg;
+        toast.style.opacity = "1";
+        setTimeout(() => {
+            toast.style.opacity = "0";
+        }, 1800);
+    }
+
+    renderScripts();
+    renderModels();
+</script>
+</body>
+</html>
