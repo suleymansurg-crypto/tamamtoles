@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>me </title>
+    <meta name="description" content="موقع me  - تم إنشاؤه باستخدام Kode Web Vista">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+        .powered-by {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            z-index: 9999;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .powered-by:hover { opacity: 1; }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>سليمان | سكربتات & موديلات Roblox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: #0a0c12;
+            color: #eef5ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141824;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b3f5c;
+            border-radius: 10px;
+        }
+
+        /* container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* header / hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            border-bottom: 1px solid rgba(72, 187, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #fff, #4facfe);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #b9c7d9;
+            margin: 1rem 0 0.5rem;
+        }
+        .hero .sub {
+            color: #7e8aa8;
+            font-size: 1rem;
+        }
+        .tech-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .badge {
+            background: #1e2438;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border: 1px solid #2d3448;
+            backdrop-filter: blur(4px);
+        }
+
+        /* section title */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem 0;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        /* grid cards */
+        .scripts-grid, .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.8rem;
+        }
+        .card {
+            background: #11161f;
+            border-radius: 28px;
+            padding: 1.3rem 1.5rem 1.8rem;
+            transition: 0.2s ease;
+            border: 1px solid #232a36;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.5);
+        }
+        .card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+        .card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .lang {
+            background: #2d374b;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+        pre {
+            background: #010409;
+            padding: 1rem;
+            border-radius: 18px;
+            overflow-x: auto;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            margin: 1rem 0;
+            border: 1px solid #2a2f3f;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .btn-copy {
+            background: #1f2a3e;
+            border: none;
+            color: #a0b3d9;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s;
+            margin-bottom: 0.8rem;
+        }
+        .btn-copy:hover {
+            background: #2f3b58;
+            color: white;
+        }
+        .note {
+            font-size: 0.8rem;
+            color: #8d9bca;
+            border-top: 1px dashed #2a2f44;
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+        }
+        .model-item {
+            background: #0c101a;
+            border-radius: 20px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .model-item strong {
+            font-size: 1.2rem;
+        }
+        .model-link {
+            background: #2563eb;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: 0.1s;
+        }
+        .model-link:hover {
+            background: #1e4fbd;
+        }
+
+        .about {
+            background: linear-gradient(145deg, #0c1120, #080b14);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid #2b3246;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1f2538;
+            font-size: 0.85rem;
+            color: #6f7a9e;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            backdrop-filter: blur(12px);
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border: 1px solid #4c9aff;
+            z-index: 999;
+            pointer-events: none;
+            transition: 0.2s;
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="hero">
+        <h1>⚡ سليمان سكربتات & موديلات</h1>
+        <div class="tagline">> سكربتات Luau وموديلات 3D مجانية</div>
+        <div class="sub">مصنوعة لمجتمع Roblox · انسخ. استخدم. ابني. ما تحتاج تكرديت.</div>
+        <div class="tech-badge">
+            <span class="badge">🔷 ROBLOX</span>
+            <span class="badge">📜 LUAU</span>
+            <span class="badge">💸 FREE</span>
+            <span class="badge">📦 OPEN</span>
+        </div>
+        <div class="tech-badge">
+            <span class="badge">■ سكربتات مجانية</span>
+            <span class="badge">■ 3D MODELS</span>
+            <span class="badge">■ LUAU CODE</span>
+            <span class="badge">■ ROBLOX STUDIO</span>
+            <span class="badge">■ مفتوح المصدر</span>
+            <span class="badge">■ BY سليمان</span>
+        </div>
+    </div>
+
+    <!-- SCRIPTS SECTION -->
+    <div class="section-title">📜 سكربتات Luau المجانية</div>
+    <div class="scripts-grid" id="scriptsGrid">
+        <!-- script 1 -->
+        <div class="card"><h3>⚡ Speed Boost <span class="lang">Luau</span></h3><pre>-- Speed Boost by سليمان
+local part = script.Parent
+local boostAmount = 30
+part.Touched:Connect(function(hit)
+    local hum = hit.Parent:FindFirstChild("Humanoid")
+    if hum then
+        hum.WalkSpeed += boostAmount
+    end
+end)</pre><button class="btn-copy" data-code='-- Speed Boost by سليمان
+local part = script.Parent
+local boostAmount = 30
+part.Touched:Connect(function(hit)
+    local hum = hit.Parent:FindFirstChild("Humanoid")
+    if hum then
+        hum.WalkSpeed += boostAmount
+    end
+end)'>📋 نسخ السكربت</button><div class="note">نظام السرعة الزائدة — المس الجزء للحصول على سرعة مؤقتة</div></div>
+
+        <div class="card"><h3>🌙 Day/Night Cycle <span class="lang">Luau</span></h3><pre>-- Day/Night Cycle by سليمان
+local Lighting = game:GetService("Lighting")
+local cycleSpeed = 60
+while true do
+    for h = 0, 24, 0.01 do
+        Lighting.TimeOfDay = h
+        task.wait(cycleSpeed/2400)
+    end
+end</pre><button class="btn-copy" data-code='-- Day/Night Cycle by سليمان
+local Lighting = game:GetService("Lighting")
+local cycleSpeed = 60
+while true do
+    for h = 0, 24, 0.01 do
+        Lighting.TimeOfDay = h
+        task.wait(cycleSpeed/2400)
+    end
+end'>📋 نسخ السكربت</button><div class="note">دورة الليل والنهار — إضاءة سلسة</div></div>
+
+        <div class="card"><h3>💀 Kill Brick <span class="lang">Luau</span></h3><pre>-- Kill Brick by سليمان
+local part = script.Parent
+part.Touched:Connect(function(hit)
+    local hum = hit.Parent:FindFirstChildOfClass("Humanoid")
+    if hum and hum.Health > 0 then
+        hum.Health = 0
+    end
+end)</pre><button class="btn-copy" data-code='-- Kill Brick by سليمان
+local part = script.Parent
+part.Touched:Connect(function(hit)
+    local hum = hit.Parent:FindFirstChildOfClass("Humanoid")
+    if hum and hum.Health > 0 then
+        hum.Health = 0
+    end
+end)'>📋 نسخ السكربت</button><div class="note">طابوق القتل — المس تموت فوراً</div></div>
+
+        <div class="card"><h3>🏆 Leaderboard <span class="lang">Luau</span></h3><pre>-- Leaderboard by سليمان
+local Players = game:GetService("Players")
+Players.PlayerAdded:Connect(function(p)
+    local ls = Instance.new("Folder")
+    ls.Name = "leaderstats"
+    ls.Parent = p
+    local pts = Instance.new("IntValue")
+    pts.Name = "Points"
+    pts.Value = 0
+    pts.Parent = ls
+end)</pre><button class="btn-copy" data-code='-- Leaderboard by سليمان
+local Players = game:GetService("Players")
+Players.PlayerAdded:Connect(function(p)
+    local ls = Instance.new("Folder")
+    ls.Name = "leaderstats"
+    ls.Parent = p
+    local pts = Instance.new("IntValue")
+    pts.Name = "Points"
+    pts.Value = 0
+    pts.Parent = ls
+end)'>📋 نسخ السكربت</button><div class="note">نظام النقاط — لوحة نقاط للاعبين</div></div>
+
+        <div class="card"><h3>🤖 NPC AI <span class="lang">Luau</span></h3><pre>-- ذكاء اصطناعي للـ NPC بقلم سليمان
+local npc = script.Parent
+local CHASE_DISTANCE = 40
+local ATTACK_DISTANCE = 7
+local NPC_SPEED = 16
+-- يطارد أقرب لاعب تلقائياً
+while true do
+    task.wait(0.15)
+    -- اكتمل بواسطة سليمان: مطاردة، هجوم، شريط صحة
+end</pre><button class="btn-copy" data-code='-- ذكاء اصطناعي للـ NPC بقلم سليمان
+local npc = script.Parent
+local CHASE_DISTANCE = 40
+local ATTACK_DISTANCE = 7
+local NPC_SPEED = 16
+while true do
+    task.wait(0.15)
+end'>📋 نسخ السكربت</button><div class="note">NPC مطاردة، هجوم، شريط صحة</div></div>
+
+        <div class="card"><h3>📏 Size Changer GUI <span class="lang">Luau × 2</span></h3><pre>-- Size Changer GUI by سليمان
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local event = ReplicatedStorage:WaitForChild("ChangeSize")
+-- سلايدر يغير حجم اللاعب (LocalScript + ServerScript)</pre><button class="btn-copy" data-code='-- Size Changer GUI by سليمان
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local event = ReplicatedStorage:WaitForChild("ChangeSize")'>📋 نسخ السكربت</button><div class="note">مغير الحجم — سلايدر UI يغير حجم الشخصية</div></div>
+
+        <div class="card"><h3>🌌 Gravity Controller <span class="lang">Luau</span></h3><pre>-- Gravity Controller GUI by سليمان
+local DEFAULT_GRAVITY = 196.2
+local MIN_GRAVITY = 8
+local MAX_GRAVITY = 500
+-- slider: right=less, left=more</pre><button class="btn-copy" data-code='-- Gravity Controller GUI by سليمان
+local DEFAULT_GRAVITY = 196.2
+local MIN_GRAVITY = 8
+local MAX_GRAVITY = 500'>📋 نسخ السكربت</button><div class="note">سلايدر يتحكم بالجاذبية — يمين أقل يسار أكثر</div></div>
+
+        <div class="card"><h3>⚔️ KillFeed + Damage <span class="lang">Luau × 2</span></h3><pre>-- KillFeed by سليمان
+local killFeedRemote = ReplicatedStorage:WaitForChild("KillFeedEvent", 15)
+killFeedRemote.OnClientEvent:Connect(function(name)
+    showKillCard(name)
+end)</pre><button class="btn-copy" data-code='-- KillFeed by سليمان
+local killFeedRemote = ReplicatedStorage:WaitForChild("KillFeedEvent", 15)
+killFeedRemote.OnClientEvent:Connect(function(name)
+    showKillCard(name)
+end)'>📋 نسخ السكربت</button><div class="note">KillFeed + أرقام الضرر GTA Style</div></div>
+
+        <div class="card"><h3>💾 Points + DataStore <span class="lang">Luau × 2</span></h3><pre>-- Points + DataStore + GUI by سليمان
+local PointsStore = DataStoreService:GetDataStore("PlayerPointsV2")
+-- LeaderStats + حفظ بيانات + إشعار GUI</pre><button class="btn-copy" data-code='-- Points + DataStore + GUI by سليمان
+local PointsStore = DataStoreService:GetDataStore("PlayerPointsV2")'>📋 نسخ السكربت</button><div class="note">نظام النقاط الكامل — DataStore + LeaderStats + إشعار</div></div>
+
+        <div class="card"><h3>🔥 Daily Streak System <span class="lang">Luau</span></h3><pre>-- Daily Streak System by سليمان
+local streakStore = DataStoreService:GetDataStore("DayStreak_v2")
+local SECONDS_IN_DAY = 86400
+-- Billboard + DataStore + LeaderStats</pre><button class="btn-copy" data-code='-- Daily Streak System by سليمان
+local streakStore = DataStoreService:GetDataStore("DayStreak_v2")
+local SECONDS_IN_DAY = 86400'>📋 نسخ السكربت</button><div class="note">نظام السترييك اليومي 🔥 Billboard</div></div>
+
+        <div class="card"><h3>🏳️ Country Flag + Name <span class="lang">Luau</span></h3><pre>-- Country Flag + Name by سليمان
+local Flags = { ["sa"] = "🇸🇦", ["us"] = "🇺🇸", ["eg"] = "🇪🇬" }
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(char)
+        -- علم + اسم اللاعب فوق الرأس ويختفي بعد 50 stud
+    end)
+end)</pre><button class="btn-copy" data-code='-- Country Flag + Name by سليمان
+local Flags = { ["sa"] = "🇸🇦", ["us"] = "🇺🇸", ["eg"] = "🇪🇬" }
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(char)
+    end)
+end)'>📋 نسخ السكربت</button><div class="note">🌍 195+ دولة · علم + اسم · يختفي بعد 50 stud</div></div>
+
+        <div class="card"><h3>📱 Device Type Billboard <span class="lang">Luau × 2</span></h3><pre>-- Device Type Billboard by سليمان
+local event = ReplicatedStorage:WaitForChild("DeviceTypeEvent")
+-- 📱 موبايل | 💻 PC | 🎮 Controller | ديناميكي الحجم</pre><button class="btn-copy" data-code='-- Device Type Billboard by سليمان
+local event = ReplicatedStorage:WaitForChild("DeviceTypeEvent")'>📋 نسخ السكربت</button><div class="note">أيقونة الجهاز فوق الرأس 📱💻🎮</div></div>
+    </div>
+
+    <!-- 3D MODELS SECTION -->
+    <div class="section-title">🧩 موديلات مجانية</div>
+    <div class="models-grid" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="model-item"><strong>🏆 Simple Timer</strong><span>تايمر بسيط جاهز</span><a href="#" class="model-link" onclick="alert('رابط Roblox: https://www.roblox.com/library/example-timer'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>🎮 CustomHotBarGui</strong><span>شريط أدوات UI</span><a href="#" class="model-link" onclick="alert('رابط Roblox: https://www.roblox.com/library/hotbar-example'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>🌲 حزمة أشجار مصممة</strong><span>موديلات طبيعة</span><a href="#" class="model-link" onclick="alert('رابط Roblox: tree-pack'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>💨 Dash v1</strong><span>سكريبت داش احترافي مع جوال</span><a href="#" class="model-link" onclick="alert('رابط Roblox: Dash System'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>⚔️ WeaponWheel</strong><span>تبديل أسلحة مثل GTA</span><a href="#" class="model-link" onclick="alert('رابط Roblox: Weapon Wheel'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>🔔 Player Tracker</strong><span>عدد اللاعبين + إشعارات</span><a href="#" class="model-link" onclick="alert('رابط Roblox: Player Tracker'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>🔄 نظام الراوند</strong><span>لوبي، تصويت، AFK</span><a href="#" class="model-link" onclick="alert('نظام راوند كامل'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>⚡ نظام سرعة</strong><span>بوستات وتأثيرات بصرية</span><a href="#" class="model-link" onclick="alert('نظام سرعة احترافي'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>💬 نظام شات NEW</strong><span>شات كامل جاهز</span><a href="#" class="model-link" onclick="alert('نظام شات كامل'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>🗡️ سيف NEW</strong><span>موديل سيف جاهز</span><a href="#" class="model-link" onclick="alert('سيف من Creator Store'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>⛓️ كلبشه NEW</strong><span>موديل كلبشه</span><a href="#" class="model-link" onclick="alert('كلبشه من Creator Store'); return false;">↓ احصل عليه من Roblox</a></div>
+        <div class="model-item"><strong>⏱️ ليدر بورد وقت NEW</strong><span>نظام ليدر بورد وقت</span><a href="#" class="model-link" onclick="alert('ليدر بورد وقت جاهز'); return false;">↓ احصل عليه من Roblox</a></div>
+    </div>
+
+    <!-- ABOUT - changed name to سليمان -->
+    <div class="about">
+        <h2 style="margin-bottom: 1rem;">🎮 أهلاً، أنا سليمان.</h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.05rem;">مطور Roblox عنده شغف بالسكربتة والموديلات ثلاثية الأبعاد. أشارك كل شي أصنعه — مجاناً — عشان المجتمع يبني ألعاب أحسن.<br>
+        سكربتات وموديلات تنزل دايماً. لو استخدمت شغلي، الكرديت محل تقدير بس مو شرط. بس ابني شي حلو.</p>
+        <div class="tech-badge" style="margin-top: 1.5rem;">
+            <span class="badge">20+ SCRIPTS</span>
+            <span class="badge">10+ MODELS</span>
+            <span class="badge">100% FREE</span>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 سليمان — سكربتات وموديلات مفتوحة المصدر. Built for Roblox community.
+    </footer>
+</div>
+<div id="toastMsg" class="toast-msg">✓ تم النسخ!</div>
+
+<script>
+    // Toast notification
+    function showToast(msg = "✓ تم النسخ!") {
+        const toast = document.getElementById('toastMsg');
+        toast.style.opacity = '1';
+        toast.innerText = msg;
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 1800);
+    }
+
+    // Copy buttons functionality
+    const copyBtns = document.querySelectorAll('.btn-copy');
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const code = btn.getAttribute('data-code');
+            if (code) {
+                navigator.clipboard.writeText(code).then(() => {
+                    showToast("✓ تم نسخ الكود إلى الحافظة");
+                }).catch(() => {
+                    showToast("⚠ فشل النسخ");
+                });
+            } else {
+                showToast("⚠ لا يوجد كود");
+            }
+        });
+    });
+
+    // optional alert for models (original behavior)
+    const modelLinks = document.querySelectorAll('.model-link');
+    modelLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const robloxMsg = "رابط النموذج: قم بلصق الـ Asset ID في Roblox Studio";
+            alert(robloxMsg);
+        });
+    });
+</script>
+
+
+<a href="https://lovable.dev" target="_blank" class="powered-by">
+    🚀 مُنشأ بواسطة Kode Web Vista
+</a>
+
+<script>
+(function() {
+    console.log('🌐 موقع تم إنشاؤه بواسطة Kode Web Vista');
+    
+    // حفظ إحصائيات الزيارة
+    const visitData = {
+        siteName: 'me ',
+        visitTime: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer || 'direct'
+    };
+    
+    if (typeof(Storage) !== "undefined") {
+        const visits = JSON.parse(localStorage.getItem('site_visits') || '[]');
+        visits.push(visitData);
+        localStorage.setItem('site_visits', JSON.stringify(visits.slice(-100)));
+    }
+    
+    console.log('📊 تم تسجيل زيارة جديدة:', visitData);
+})();
+</script>
+</body>
+</html>
